@@ -5,30 +5,38 @@ import  faker  from "faker";
 import ApprovalCard from './ApprovalCard'
 
 
-const App = () => (
-    <div className="ui container comments">
-    <ApprovalCard></ApprovalCard>
-     <CommentDetail 
-     author="Sam" 
-     timeAgo="Today at 4:25PM" 
-     content="Nice Blog Post  "
-     avatar={faker.image.avatar()}>
+const App = () => {
+    return (
+        <div className="ui container comments">
+            <ApprovalCard>
+                <CommentDetail
+                    author="Sam"
+                    timeAgo="Today at 4:25PM"
+                    content="Nice Blog Post  "
+                    avatar={faker.image.avatar()}>
+                </CommentDetail>
+            </ApprovalCard>
 
-     </CommentDetail>
-     <CommentDetail author="Alex" 
-     timeAgo="Today at 2:00AM" 
-     content="I Like It"
-     avatar={faker.image.avatar()}>
+            <ApprovalCard>
+                <CommentDetail author="Alex"
+                    timeAgo="Today at 2:00AM"
+                    content="I Like It"
+                    avatar={faker.image.avatar()}>
 
-     </CommentDetail>
-     <CommentDetail 
-     author="Jane" 
-     timeAgo="Yesterday at 5:00PM" 
-     content="Monster Legends"
-     avatar={faker.image.avatar()}>
-         
-     </CommentDetail>
-    </div>
-);
+                </CommentDetail>
+            </ApprovalCard>
+           
+            <ApprovalCard>
+                <CommentDetail
+                    author="Jane"
+                    timeAgo="Yesterday at 5:00PM"
+                    content="Monster Legends"
+                    avatar={faker.image.avatar()}>
+
+                </CommentDetail>
+            </ApprovalCard>
+        </div>
+    );
+};
 
 ReactDOM.render(<App/>,document.querySelector('#root'));
